@@ -60,23 +60,23 @@ if __name__ == '__main__':
     ics = glob.glob(root + '/*.ics')[0]
     name = path.split('.')[-2]
 
-    W = None
-    H = None
-    # find the shape of image
-    for l in open(ics, 'r'):
-        l = l.strip().split(' ')
-        if len(l) < 7:
-            continue
-        if l[0] == name:
-            W = int(l[4])
-            H = int(l[2])
-            bps = int(l[6])
-            if bps != 12:
-                logging.warn('BPS != 12: %s' % path)
-            break
+    # W = None
+    # H = None
+    # # find the shape of image
+    # for l in open(ics, 'r'):
+    #     l = l.strip().split(' ')
+    #     if len(l) < 7:
+    #         continue
+    #     if l[0] == name:
+    #         W = int(l[4])
+    #         H = int(l[2])
+    #         bps = int(l[6])
+    #         if bps != 12:
+    #             logging.warn('BPS != 12: %s' % path)
+    #         break
 
-    assert W != None
-    assert H != None
+    # assert W != None
+    # assert H != None
 
     image = read(path)
 
