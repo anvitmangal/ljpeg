@@ -100,10 +100,10 @@ if __name__ == '__main__':
         sys.exit(1)
         #image = cv2.equalizeHist(image)
     #tiff = stem + '.TIFF'
-    cv2.imwrite(tiff, image)
+    cv2.imwrite(png, image)
 
     if args.verify:
-        verify = cv2.imread(tiff, -1)
+        verify = cv2.imread(png, -1)
         if numpy.all(raw == verify):
             logging.info('Verification successful, conversion is lossless')
         else:
